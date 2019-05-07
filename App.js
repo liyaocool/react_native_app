@@ -45,7 +45,7 @@ class HomeScreen extends Component {
         <Text>Home Screen</Text>
         <Text>Count: {this.state.count}</Text>
         <Button
-          title="Go to Details"
+          title="To Details"
           onPress={() => {
             this.props.navigation.navigate('Details', { itemId: 'details-itemId' })
           }}
