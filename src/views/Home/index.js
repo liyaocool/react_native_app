@@ -15,18 +15,11 @@ export default class HomeScreen extends Component {
   }
 
 
-  static navigationOptions = ({ navigation }) => {
-    return {
-      title:'首页',
-      headerRight: (
-        <Button
-          onPress={navigation.getParam('increaseCount')}
-          title="+1"
-          color={Platform.OS === 'ios' ? '#fff' : null}
-        />
-      ),
-    };
-  }
+  // static navigationOptions = ({ navigation }) => {
+  //   return {
+  //     title:'首页',
+  //   };
+  // }
 
   //方法
   _increaseCount() {
