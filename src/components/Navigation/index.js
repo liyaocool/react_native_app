@@ -1,11 +1,13 @@
 import { createAppContainer, createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import HomeScreen from '../../views/Home/'
+import DetailsScreen from '../../views/Home/Details'
 import MyPlugins from '../../views/MyPlugins'
+import ProfileScreen from '../../views/MyPlugins/Profile/'
 
 const HomeStack = createStackNavigator(
   {
     Home: HomeScreen,
-    // Details: DetailsScreen,
+    Details: DetailsScreen,
   },
   {
     initialRouteName: 'Home',
@@ -24,7 +26,7 @@ const HomeStack = createStackNavigator(
 const MyPluginsStack = createStackNavigator(
   {
     MyPlugins: MyPlugins,
-    // Profile: ()=>import("../../views/MyPlugins/Profile"),
+    Profile: ProfileScreen,
 
   },
   {
