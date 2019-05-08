@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Button, Platform } from 'react-native';
+import { View, Text, Button, Platform, StyleSheet } from 'react-native';
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -17,6 +17,7 @@ export default class HomeScreen extends Component {
 
   static navigationOptions = ({ navigation }) => {
     return {
+      title:'首页',
       headerRight: (
         <Button
           onPress={navigation.getParam('increaseCount')}
@@ -34,17 +35,26 @@ export default class HomeScreen extends Component {
 
   //渲染DOM
   render() {
+    const {navigate} = this.props.navigation
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Home Screen</Text>
-        <Text>Count: {this.state.count}</Text>
+      <View style={styles.Container}>
+        <Text>首页</Text>
+        <Text>计数: {this.state.count}</Text>
         <Button
-          title="To Details"
+          title="去详情"
           onPress={() => {
-            this.props.navigation.navigate('Details', { itemId: 'details-itemId' })
+            navigate('Details', { itemId: '首页传的参数' })
           }}
         />
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  Container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
+})

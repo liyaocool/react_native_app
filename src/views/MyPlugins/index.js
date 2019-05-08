@@ -1,21 +1,35 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import {
+  View,
+  Text,
+  Button,
+  StyleSheet
+} from 'react-native';
 
 export default class MyPluginsScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: 'My Plugins'
+      title: '插件'
     }
   }
   render() {
+    const { navigate } = this.props.navigation
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={styles.Container}>
         <Text>MyPluginsScreen</Text>
         <Button
           title="Go to Profile"
-          onPress={() => this.props.navigation.navigate('Profile')}
+          onPress={() => navigate('Profile')}
         />
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  Container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
+})

@@ -16,12 +16,13 @@ export default class ProfileScreen extends Component {
     }
   }
   render() {
+    const { navigate } = this.props.navigation
     return (
       <View style={styles.Container}>
         <Text>Profile Screen</Text>
         <Button
           title="Go to Settings"
-          onPress={() => this.props.navigation.navigate('MyPlugins')}
+          onPress={() => navigate('MyPlugins')}
         />
       </View>
     );
