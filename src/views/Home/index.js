@@ -15,11 +15,11 @@ export default class HomeScreen extends Component {
   }
 
 
-  // static navigationOptions = ({ navigation }) => {
-  //   return {
-  //     title:'首页',
-  //   };
-  // }
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title:'首页',
+    };
+  }
 
   //方法
   _increaseCount() {

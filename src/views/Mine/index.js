@@ -6,17 +6,17 @@ import {
   StyleSheet
 } from 'react-native';
 
-export default class MyPluginsScreen extends Component {
+export default class MineScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: '插件'
+      title: '我的'
     }
   }
   render() {
     const { navigate } = this.props.navigation
     return (
       <View style={styles.Container}>
-        <Text>MyPluginsScreen</Text>
+        <Text>MineScreen</Text>
       </View>
     );
   }
