@@ -3,10 +3,9 @@ import { View, Text, Button, Platform, StyleSheet } from 'react-native';
 import Icon from "react-native-vector-icons/Ionicons"
 
 export default class HomeScreen extends Component {
-
   //渲染DOM
   render() {
-    const {navigate} = this.props.navigation
+    const { navigate } = this.props.navigation
     return (
       <View style={styles.Container}>
         <Text>首页</Text>
