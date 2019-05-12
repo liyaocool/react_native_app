@@ -22,6 +22,18 @@ export default class HomeScreen extends Component {
             navigate('Page2')
           }}
         />
+        <Button
+          title="AppTop"
+          onPress={() => {
+            navigate('AppTop')
+          }}
+        />
+        <Button
+          title="AppBottom"
+          onPress={() => {
+            navigate('AppBottom')
+          }}
+        />
       </View>
     );
   }
