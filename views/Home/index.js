@@ -34,6 +34,12 @@ export default class HomeScreen extends Component {
             navigate('AppBottom')
           }}
         />
+        <Button
+          title="DrawNavigator"
+          onPress={() => {
+            navigate('AppDraw')
+          }}
+        />
       </View>
     );
   }

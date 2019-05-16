@@ -2,6 +2,7 @@ import {createAppContainer, createStackNavigator} from 'react-navigation';
 import {Platform} from 'react-native';
 import TopNavigator from './TopNavigator'
 import BottomNavigator from './BottomNavigator'
+import DrawNavigator from './DrawNavigator'
 import HomePage from '../views/Home'
 import Page1 from '../views/Home/page1'
 import Page2 from '../views/Home/page2'
@@ -59,6 +60,14 @@ const HomeStack = createStackNavigator({
       navigation
     }) => ({
       title: `BottomNavigator`
+    })
+  },
+  AppDraw: {
+    screen: DrawNavigator,
+    navigationOptions: ({
+      navigation
+    }) => ({
+      title: `DrawNavigator`
     })
   },
 
