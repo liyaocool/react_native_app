@@ -2,14 +2,15 @@
 import React from 'react';
 import {createMaterialTopTabNavigator} from 'react-navigation'
 import Icon from "react-native-vector-icons/Ionicons"
-import Page1 from '../views/Home/page1'
-import Page2 from '../views/Home/page2'
-import Page3 from '../views/Home/page3'
+import Home from '../views/Home'
+import MyPlugins from '../views/MyPlugins'
+import MyStyles from '../views/MyStyles'
+import Mine from '../views/Mine'
 
  const TopNavigator = createMaterialTopTabNavigator(  
   {
-    Page1: {
-      screen: Page1,
+    Home: {
+      screen: Home,
       navigationOptions: {
         tabBarLabel: '首页',
         tabBarIcon:({focused, tintColor})=>(
@@ -17,8 +18,8 @@ import Page3 from '../views/Home/page3'
         )
       }
     },
-    Page2: {
-      screen: Page2,
+    MyPlugins: {
+      screen: MyPlugins,
       navigationOptions: {
         tabBarLabel: '插件',
         tabBarIcon:({focused, tintColor})=>(
@@ -26,8 +27,8 @@ import Page3 from '../views/Home/page3'
         )
       }
     },
-    Page3: {
-      screen: Page3,
+    MyStyles: {
+      screen: MyStyles,
       navigationOptions: {
         tabBarLabel: '样式',
         tabBarIcon:({focused, tintColor})=>(
@@ -35,8 +36,8 @@ import Page3 from '../views/Home/page3'
         )
       }
     },
-    Page4: {
-      screen: Page3,
+    Mine: {
+      screen: Mine,
       navigationOptions: {
         tabBarLabel: '我的',
         tabBarIcon:({focused, tintColor})=>(
@@ -46,7 +47,7 @@ import Page3 from '../views/Home/page3'
     },
   },
   {
-  initialRouteName: 'Page3',
+  initialRouteName: 'Mine',
   tabStyle:{minWidth:50},
   indicatorStyle:{
     height:2,

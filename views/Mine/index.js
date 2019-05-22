@@ -17,6 +17,12 @@ export default class MineScreen extends Component {
     return (
       <View style={styles.Container}>
         <Text>MineScreen</Text>
+        <Button
+          title="去我的详情页"
+          onPress={() => {
+            navigate('DetailPage', { name: '我的详情' })
+          }}
+        />
       </View>
     );
   }

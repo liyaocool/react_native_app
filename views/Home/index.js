@@ -5,39 +5,16 @@ import Icon from "react-native-vector-icons/Ionicons"
 export default class HomeScreen extends Component {
   //渲染DOM
   render() {
-    const { navigate } = this.props.navigation
+    const { navigate, state } = this.props.navigation
     return (
       <View style={styles.Container}>
         <Text>首页</Text>
+        <Text>{JSON.stringify(this.props.navigation) }</Text>
         <Icon name="ios-settings" size={25} color="blue" />
         <Button
-          title="去页面1"
+          title="去首页详情页"
           onPress={() => {
-            navigate('Page1', { name: '动态名字' })
-          }}
-        />
-        <Button
-          title="去页面2"
-          onPress={() => {
-            navigate('Page2')
-          }}
-        />
-        <Button
-          title="AppTop"
-          onPress={() => {
-            navigate('AppTop')
-          }}
-        />
-        <Button
-          title="AppBottom"
-          onPress={() => {
-            navigate('AppBottom')
-          }}
-        />
-        <Button
-          title="DrawNavigator"
-          onPress={() => {
-            navigate('AppDraw')
+            navigate('DetailPage', { name: '动态名字' })
           }}
         />
       </View>

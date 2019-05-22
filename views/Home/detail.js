@@ -6,15 +6,16 @@ import {
   StyleSheet
 } from 'react-native';
 
-export default class Page2 extends Component {
+export default class Page1 extends Component {
   render() {
-    const {navigate} = this.props.navigation
+    const {goBack} = this.props.navigation
     return (
       <View style={styles.Container}>
-        <Text>页面2</Text>
+        <Text>Home detail</Text>
+        <Text>{JSON.stringify(this.props.navigation) }</Text>
         <Button
-          title="跳转页面1"
-          onPress={() => navigate('Page1',{name:'来自页面3的标题'})}
+          title="返回上一页"
+          onPress={() => goBack()}
         />
       </View>
     );

@@ -6,20 +6,9 @@ import {
 } from "react-navigation";
 import Icon from "react-native-vector-icons/Ionicons";
 import { View, Text, Button, StyleSheet, ScrollView } from "react-native";
-import Page1 from "../views/Home/page1";
-
-class DrawPage extends Component {
-  render() {
-    const { openDrawer, closeDrawer } = this.props.navigation;
-    return (
-      <View style={styles.Container}>
-        <Text>从屏幕左侧向右滑动打开抽屉</Text>
-        <Button title="打开抽屉菜单" onPress={() => openDrawer()} />
-        <Button title="关闭抽屉菜单" onPress={() => closeDrawer()} />
-      </View>
-    );
-  }
-}
+import HomeStack from './HomeStack'
+import BottomNavigator from "./BottomNavigator";
+import Home from "../views/Home";
 
 //自定义内容组件
 const CustomDrawerContentComponent = props => (
@@ -29,7 +18,7 @@ const CustomDrawerContentComponent = props => (
       forceInset={{ top: "always", horizontal: "never" }}
     >
       <View>
-        <Button title="关闭抽屉菜单" onPress={() => closeDrawer()} />
+        <Button title="关闭抽屉菜单" onPress={() => props.navigation.closeDrawer()} />
       </View>
       <DrawerItems {...props} />
     </SafeAreaView>
@@ -38,24 +27,15 @@ const CustomDrawerContentComponent = props => (
 
 const DrawNavigator = createDrawerNavigator(
   {
-    DrawPage: {
-      screen: DrawPage,
+    BottomNavigator: {
+      screen: BottomNavigator,
       navigationOptions: {
-        drawerLabel: "DrawPage",
+        drawerLabel: "BottomNavigator",
         drawerIcon: ({ focused, tintColor }) => (
           <Icon name="ios-home" size={25} style={{ color: tintColor }} />
         )
       }
     },
-    Page1: {
-      screen: Page1,
-      navigationOptions: {
-        drawerLabel: "Page1",
-        drawerIcon: ({ focused, tintColor }) => (
-          <Icon name="ios-home" size={25} style={{ color: tintColor }} />
-        )
-      }
-    }
   },
   {
     contentComponent: CustomDrawerContentComponent,

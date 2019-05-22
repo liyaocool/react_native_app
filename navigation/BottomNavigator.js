@@ -1,14 +1,17 @@
 import React from 'react';
 import {createBottomTabNavigator} from 'react-navigation'
 import Icon from "react-native-vector-icons/Ionicons"
-import Page1 from '../views/Home/page1'
-import Page2 from '../views/Home/page2'
-import Page3 from '../views/Home/page3'
+import Home from '../views/Home'
+import HomeStack from './HomeStack'
+import MineStack from './MineStack'
+import MyPlugins from '../views/MyPlugins'
+import MyStyles from '../views/MyStyles'
+import Mine from '../views/Mine'
 
 const BottomNavigator = createBottomTabNavigator(
   {
-  Page1: {
-    screen: Page1,
+    HomeStack: {
+    screen: HomeStack,
     navigationOptions: {
       tabBarLabel: '首页',
       tabBarIcon:({focused, tintColor})=>(
@@ -16,8 +19,8 @@ const BottomNavigator = createBottomTabNavigator(
       )
     }
   },
-  Page2: {
-    screen: Page2,
+  MyPlugins: {
+    screen: MyPlugins,
     navigationOptions: {
       tabBarLabel: '插件',
       tabBarIcon:({focused, tintColor})=>(
@@ -25,8 +28,8 @@ const BottomNavigator = createBottomTabNavigator(
       )
     }
   },
-  Page3: {
-    screen: Page3,
+  MyStyles: {
+    screen: MyStyles,
     navigationOptions: {
       tabBarLabel: '样式',
       tabBarIcon:({focused, tintColor})=>(
@@ -34,12 +37,12 @@ const BottomNavigator = createBottomTabNavigator(
       )
     }
   },
-  Page4: {
-    screen: Page3,
+  MineStack: {
+    screen: MineStack,
     navigationOptions: {
       tabBarLabel: '我的',
       tabBarIcon:({focused, tintColor})=>(
-        <Icon name="ios-contact" size={25} style={{color: tintColor}}/>
+        <Icon name="logo-css3" size={25} style={{color: tintColor}}/>
       )
     }
   },
