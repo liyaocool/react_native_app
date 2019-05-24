@@ -6,7 +6,7 @@ import {
 } from "react-navigation";
 import Icon from "react-native-vector-icons/Ionicons";
 import { View, Text, Button, StyleSheet, ScrollView } from "react-native";
-import HomeStack from './HomeStack'
+import HomeStack from "./HomeStack";
 import BottomNavigator from "./BottomNavigator";
 import Home from "../views/Home";
 
@@ -18,7 +18,10 @@ const CustomDrawerContentComponent = props => (
       forceInset={{ top: "always", horizontal: "never" }}
     >
       <View>
-        <Button title="关闭抽屉菜单" onPress={() => props.navigation.closeDrawer()} />
+        <Button
+          title="关闭抽屉菜单"
+          onPress={() => props.navigation.closeDrawer()}
+        />
       </View>
       <DrawerItems {...props} />
     </SafeAreaView>
@@ -29,13 +32,19 @@ const DrawNavigator = createDrawerNavigator(
   {
     BottomNavigator: {
       screen: BottomNavigator,
-      navigationOptions: {
-        drawerLabel: "BottomNavigator",
-        drawerIcon: ({ focused, tintColor }) => (
-          <Icon name="ios-home" size={25} style={{ color: tintColor }} />
-        )
+      navigationOptions: ({ navigation }) => {
+        let tabBarVisible = true;
+        if (navigation.state.index > 0) {
+          return {
+            tabBarVisible,
+            drawerLabel: "BottomNavigator",
+            drawerIcon: ({ focused, tintColor }) => (
+              <Icon name="ios-home" size={25} style={{ color: tintColor }} />
+            )
+          };
+        }
       }
-    },
+    }
   },
   {
     contentComponent: CustomDrawerContentComponent,

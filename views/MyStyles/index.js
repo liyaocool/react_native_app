@@ -17,6 +17,12 @@ export default class MyStylesScreen extends Component {
     return (
       <View style={styles.Container}>
         <Text>MyStylesScreen</Text>
+        <Button
+          title="去样式详情页"
+          onPress={() => {
+            navigate('DetailPage', { name: '动态样式参数' })
+          }}
+        />
       </View>
     );
   }
