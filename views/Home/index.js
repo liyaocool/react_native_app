@@ -14,7 +14,7 @@ export default class HomeScreen extends Component {
         <Button
           title="去首页详情页"
           onPress={() => {
-            navigate('DetailPage', { name: '动态名字' })
+            navigate('HomeDetail', { name: '动态名字' })
           }}
         />
       </View>
