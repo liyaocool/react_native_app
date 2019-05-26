@@ -10,7 +10,7 @@ const MineStack = createStackNavigator(
     MinePage: {
       screen: MinePage,
       navigationOptions: ({ navigation }) => ({
-        initialRouteName:'Mine',
+        header: null,
         title: `我的`,
         headerBackTitle: "返回我的"
       })

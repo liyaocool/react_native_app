@@ -10,7 +10,7 @@ const StylesStack = createStackNavigator(
     StylesPage: {
       screen: StylesPage,
       navigationOptions: ({ navigation }) => ({
-        initialRouteName:'StylesPage',
+        header: null,
         title: `样式`,
         headerBackTitle: "返回样式"
       })

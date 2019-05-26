@@ -31,6 +31,7 @@ const BottomNavigator = createBottomTabNavigator(
           tabBarVisible = false;
         }
         return {
+
           tabBarVisible,
           tabBarLabel: "首页",
           tabBarIcon: ({ focused, tintColor }) => (

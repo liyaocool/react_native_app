@@ -10,6 +10,7 @@ const HomeStack = createStackNavigator(
     HomePage: {
       screen: HomePage,
       navigationOptions: ({ navigation }) => ({
+        header: null,
         title: `首页`,
         headerBackTitle: "返回首页"
       })

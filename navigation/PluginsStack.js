@@ -10,7 +10,7 @@ const PluginsStack = createStackNavigator(
     PluginsPage: {
       screen: PluginsPage,
       navigationOptions: ({ navigation }) => ({
-        initialRouteName:'PluginsPage',
+        header: null,
         title: `插件`,
         headerBackTitle: "返回插件"
       })
