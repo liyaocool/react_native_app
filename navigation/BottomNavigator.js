@@ -96,7 +96,7 @@ const BottomNavigator = createBottomTabNavigator(
   {
     tabBarComponent: props => <CustomBottomComponent {...props} />,
     tabBarOptions: {
-      // activeTintColor: "red"
+      activeTintColor: "#6a51ae"
     }
   }
 );

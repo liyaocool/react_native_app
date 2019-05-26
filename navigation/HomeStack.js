@@ -10,7 +10,7 @@ const HomeStack = createStackNavigator(
     HomePage: {
       screen: HomePage,
       navigationOptions: ({ navigation }) => ({
-        header: null,
+        // header: null,
         title: `首页`,
         headerBackTitle: "返回首页"
       })
@@ -24,10 +24,18 @@ const HomeStack = createStackNavigator(
   },
   {
     defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: "#6a51ae"
+      },
       headerTitleStyle: {
         alignSelf: "center",
         textAlign: "center",
-        flex: 1
+        flex: 1,
+        color: "#fff"
+      },
+      headerTintColor: "#fff",
+      headerBackTitleStyle: {
+        color: "#fff"
       },
       headerTitleContainerStyle: {
         left: TITLE_OFFSET,
