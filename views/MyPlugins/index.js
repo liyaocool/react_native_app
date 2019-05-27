@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FlatList } from "react-native";
-import { View, Text, Button, StyleSheet } from "react-native";
+import { View, Text,Alert, Button, StyleSheet } from "react-native";
+import FontIcon from "react-native-vector-icons/FontAwesome";
 
 export default class MyPluginsScreen extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ export default class MyPluginsScreen extends Component {
       ],
       loaded: false
     };
-    this.GetData = this.GetData.bind(this);
+    // this.GetData = this.GetData.bind(this);
   }
   static navigationOptions = ({ navigation }) => {
     return {
@@ -27,21 +28,13 @@ export default class MyPluginsScreen extends Component {
     setTimeout(() => {
       this.setState({
         listData: [
-          { id: "1", title: "FlatList", text: "FlatList滚动列表的使用" },
-          { id: "2", title: "FlatList", text: "FlatList滚动列表的使用" },
-          { id: "3", title: "FlatList", text: "FlatList滚动列表的使用" },
-          { id: "4", title: "FlatList", text: "FlatList滚动列表的使用" },
-          { id: "5", title: "FlatList", text: "FlatList滚动列表的使用" },
-          { id: "6", title: "FlatList", text: "FlatList滚动列表的使用" },
-          { id: "7", title: "FlatList", text: "FlatList滚动列表的使用" },
-          { id: "8", title: "FlatList", text: "FlatList滚动列表的使用" },
-          { id: "9", title: "FlatList", text: "FlatList滚动列表的使用" },
-          { id: "10", title: "FlatList", text: "FlatList滚动列表的使用" },
-          { id: "11", title: "FlatList", text: "FlatList滚动列表的使用" },
-          { id: "12", title: "FlatList", text: "FlatList滚动列表的使用" },
-          { id: "13", title: "FlatList", text: "FlatList滚动列表的使用" },
-          { id: "14", title: "FlatList", text: "FlatList滚动列表的使用" },
-          { id: "15", title: "FlatList", text: "FlatList滚动列表的使用" }
+          {
+            id: "1",
+            title: "FlatList",
+            text: "FlatList的基本用法",
+            routeName: "BaseFlatList"
+          },
+          // { id: "2", title: "FlatList", text: "FlatList的下拉刷新" }
         ],
         loaded: true
       });
@@ -49,9 +42,16 @@ export default class MyPluginsScreen extends Component {
   }
   RenderItem({ item }) {
     return (
-      <Text style={styles.ListItem}>
-        {item.title}:{item.text}
-      </Text>
+      <View style={styles.ListItem}>
+        <Text>{item.id}</Text>
+        <Text>{item.title}</Text>
+        <Text>{item.text}</Text>
+        <FontIcon
+          name="angle-right"
+          size={25}
+          style={{ color: "#6a51ae" }}
+        />
+      </View>
     );
   }
 
@@ -90,12 +90,11 @@ const styles = StyleSheet.create({
     width: "100%"
   },
   ListItem: {
-    height: 80,
-    width: "100%",
-    backgroundColor: "#ddd",
-    textAlign: "center",
-    textAlignVertical: "center",
-    lineHeight: 80,
+    height: 40,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    backgroundColor: "#efefef",
     marginBottom: 10,
     borderRadius: 3
   }

@@ -2,15 +2,15 @@ import React, { Component } from "react";
 import { createBottomTabNavigator, BottomTabBar } from "react-navigation";
 import { View, Text, Button, StyleSheet, ScrollView } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
+import FontIcon from "react-native-vector-icons/FontAwesome";
 import HomeStack from "./HomeStack";
 import PluginsStack from "./PluginsStack";
 import StylesStack from "./StylesStack";
 import MineStack from "./MineStack";
 
 class CustomBottomComponent extends Component {
-  constructor() {
-    super();
-    this.state = { visible: false };
+  constructor(props) {
+    super(props);
   }
   render() {
     return (
@@ -35,7 +35,7 @@ const BottomNavigator = createBottomTabNavigator(
           tabBarVisible,
           tabBarLabel: "首页",
           tabBarIcon: ({ focused, tintColor }) => (
-            <Icon name="ios-home" size={25} style={{ color: tintColor }} />
+            <FontIcon name="home" size={25} style={{ color: tintColor }} />
           )
         };
       }
@@ -87,7 +87,7 @@ const BottomNavigator = createBottomTabNavigator(
           tabBarVisible,
           tabBarLabel: "我的",
           tabBarIcon: ({ focused, tintColor }) => (
-            <Icon name="logo-css3" size={25} style={{ color: tintColor }} />
+            <FontIcon name="user" size={25} style={{ color: tintColor }} />
           )
         };
       }

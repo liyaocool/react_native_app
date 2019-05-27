@@ -6,17 +6,12 @@ import {
   StyleSheet
 } from 'react-native';
 
-export default class Page1 extends Component {
+export default class BaseFlatList extends Component {
   render() {
     const {goBack} = this.props.navigation
     return (
       <View style={styles.Container}>
-        <Text>Plugins detail</Text>
-        <Text>{JSON.stringify(this.props.navigation) }</Text>
-        <Button
-          title="返回上一页"
-          onPress={() => goBack()}
-        />
+        <Text>BaseFlatList</Text>
       </View>
     );
   }

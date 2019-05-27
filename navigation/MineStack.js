@@ -10,7 +10,6 @@ const MineStack = createStackNavigator(
     MinePage: {
       screen: MinePage,
       navigationOptions: ({ navigation }) => ({
-        header: null,
         title: `我的`,
         headerBackTitle: "返回我的"
       })
@@ -24,10 +23,18 @@ const MineStack = createStackNavigator(
   },
   {
     defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: "#6a51ae"
+      },
       headerTitleStyle: {
         alignSelf: "center",
         textAlign: "center",
-        flex: 1
+        flex: 1,
+        color: "#fff"
+      },
+      headerTintColor: "#fff",
+      headerBackTitleStyle: {
+        color: "#fff"
       },
       headerTitleContainerStyle: {
         left: TITLE_OFFSET,

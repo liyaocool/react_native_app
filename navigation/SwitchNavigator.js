@@ -1,10 +1,10 @@
 import { createSwitchNavigator } from 'react-navigation';
 import SplashPage from '../views/Splash'
-import DrawNavigator from './DrawNavigator'
+import BottomNavigator from './BottomNavigator'
 
 export default createSwitchNavigator(
     {
         SplashPage : SplashPage,    
-        DrawNavigator : DrawNavigator
+        BottomNavigator : BottomNavigator
     },
 )

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+  View,
   SafeAreaView,
   StatusBar,
   Text,
@@ -7,13 +8,12 @@ import {
   Platform,
   StyleSheet
 } from "react-native";
-import Icon from "react-native-vector-icons/Ionicons";
 
 export default class SplashPage extends Component {
   componentDidMount() {
     this.timer = setTimeout(() => {
-      this.props.navigation.navigate("DrawNavigator");
-    }, 1000);
+      this.props.navigation.navigate("BottomNavigator");
+    }, 300);
   }
   componentWillUnmount() {
     this.timer && clearTimeout(this.timer);
@@ -21,24 +21,23 @@ export default class SplashPage extends Component {
   //渲染DOM
   render() {
     return (
-      <SafeAreaView style={styles.Container}>
+      <View style={styles.container}>
         <StatusBar barStyle="light-content" backgroundColor="#6a51ae" />
-        <Text styles={{ fontSize: 34 }}>欢迎~欢迎~</Text>
-        <Icon name="ios-settings" size={25} color="#fff" />
-      </SafeAreaView>
+        <Text style={styles.title}>欢迎~欢迎~</Text>
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  Container: {
+  container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#6a51ae"
   },
-  MyText: {
-    fontSize: 34
-    // color: '#fff'
+  title: {
+    fontSize: 30,
+    color: '#fff'
   }
 });
